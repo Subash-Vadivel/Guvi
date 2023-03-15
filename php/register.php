@@ -7,36 +7,38 @@ header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept');
 header('Access-Control-Allow-Methods: POST, GET, OPTIONS');
 
-$uname = $_POST['Name'];
-$email=$data['Email'];
-$password=$data['Password'];
-$dob=$data['DOB'];
-$phone=$data['Phone'];
 
+$dob=$_POST['DOB'];
+$phone=$_POST['Phone'];
+$uname = $_POST['Name'];
+$email=$_POST['Email'];
+$pass=$_POST['Password'];
 
 
 //  Connect to the database in AWS
 $servername = "guvi.c8dazahfss6a.us-east-1.rds.amazonaws.com";
 $username = "admin";
 $password = "administrator";
-$dbname = "sys";
+$dbname = "guvi";
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($servername, $username, $password,$dbname);
 
 // Check connection
 if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
+    $t='mysqlError';
+  die(json_encode(array("text" => $t/* and anything else you want */)));
 }
 
 // prepare and bind
-$stmt = $conn->prepare("INSERT INTO MyGuests (uname, pass, email) VALUES (?, ?, ?)");
-$stmt->bind_param("sss", $uname, $password, $email);
+$stmt = $conn->prepare("INSERT INTO Users (uname, pass, email) VALUES (?, ?, ?)");
+$stmt->bind_param("sss", $uname, $pass, $email);
 
 // set parameters and execute
-$stmt->execute();
 
-echo "New User Created";
-$stmt->close();
+$stmt->execute();
+$text='success';
+die(json_encode(array('text' => $text /* and anything else you want */)));
+// $stmt->close();
 $conn->close();
 
 

@@ -23,9 +23,9 @@ $(document).ready(function() {
                 console.log(response);
                 // alert("success")
 			},
-			error: function()
+			error: function(response)
 			{
-				console.log("Error")
+				console.log(response)
 			}
 
 		});
