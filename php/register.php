@@ -42,7 +42,9 @@ if($count>0)
 $insertOneResult = $collection->insertOne([
   'email' => $email,
   'DOB'=>$dob,
-  'phone'=>$phone
+  'phone'=>$phone,
+  'name'=>$uname,
+  'gid'=>'#'.$uname.substr($phone,4)
 ]);
 
 
@@ -64,8 +66,8 @@ if ($conn->connect_error) {
 }
 
 // prepare and bind
-$stmt = $conn->prepare("INSERT INTO Users (uname, pass, email) VALUES (?, ?, ?)");
-$stmt->bind_param("sss", $uname, $pass, $email);
+$stmt = $conn->prepare("INSERT INTO Users (pass, email) VALUES ( ?, ?)");
+$stmt->bind_param("ss", $pass, $email);
 
 // set parameters and execute
 
