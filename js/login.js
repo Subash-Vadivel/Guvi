@@ -1,27 +1,44 @@
-function login()
-{
-    if(window.XMLHttpRequest)
-    {
-        a=new XMLHttpRequest();
-    }
-    else
-    {
-        a=new ActiveXObject("Microsoft.XMLHTTP");
-    }
-    a.onreadystatechange=function()
-    {
-        if(a.readyState==4 && a.status==200)
-        {
-            alert(a.responseText);
-        }
-    }
-    var email=document.getElementById("Email").value;
-    var password=document.getElementById("Password").value;
-    var url="login.php";
-    var val="Email="+email+"&Password="+password;
-    a.post("POST",url,true);
-    a.setRequestHeader("content-type","application/x-www-form-urlencoded");
-    a.setRequestHeader("content-length",val.length);
-    a.setRequestHeader("connection","close");
-    a.send(val);
-}
+$(document).ready(function() {
+	$('#subi').submit(function(e) {
+		e.preventDefault();
+        console.log("Logging ...")
+		var Password = $('#lPassword').val();
+        var Email=$('#lEmail').val();
+		$.ajax({
+			url: 'http://localhost:3000/php/login.php',
+			type: 'POST',
+			dataType:"json",
+			data:{
+				Password: Password,
+				Email:Email
+			},
+			success: function(response) {
+                console.log(response.status);
+                if(response.status==="emailerror")
+                {
+                    $('#Help').html('Email and Password not Matched');
+                }
+                else if(response.status==='success')
+                {
+                    const val=response.uid;
+					localStorage.setItem('uid',val);
+					window.location.replace("http://127.0.0.1:5500/profile.html");
+                }
+                else
+                {
+                    console.log(response.status);
+                }
+
+			},
+			error: function(response)
+			{
+				console.log("Something went wrong in front end");
+			}
+
+		});
+
+	});
+});
+
+
+
