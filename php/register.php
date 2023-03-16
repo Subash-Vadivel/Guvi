@@ -26,7 +26,7 @@ $conn = new mysqli($servername, $username, $password,$dbname);
 // Check connection
 if ($conn->connect_error) {
     $t='mysqlError';
-  die(json_encode(array("text" => $t/* and anything else you want */)));
+  die(json_encode(array("text" => $t)));
 }
 
 // prepare and bind
@@ -37,7 +37,7 @@ $stmt->bind_param("sss", $uname, $pass, $email);
 
 $stmt->execute();
 $text='success';
-die(json_encode(array('text' => $text /* and anything else you want */)));
+die(json_encode(array('text' => $text )));
 // $stmt->close();
 $conn->close();
 
