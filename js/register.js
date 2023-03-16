@@ -1,8 +1,7 @@
 // includes('../php');
 $(document).ready(function() {
-	$('#sub').click(function(e) {
+	$('#sub').submit(function(e) {
 		e.preventDefault();
-   console.log("Called")
         var Name = $('#Name').val();
 		var Password = $('#Password').val();
         var Email=$('#Email').val();
@@ -25,12 +24,18 @@ $(document).ready(function() {
 				{
 					const val=response.uid;
 					localStorage.setItem('uid',val);
+					window.location.replace("http://127.0.0.1:5500/profile.html");
+				}
+				else
+				{
+					alert("User Already Exist");
 				}
                 // alert("success")
+
 			},
 			error: function(response)
 			{
-				console.log(response)
+				alert("Something went wrong in front end");
 			}
 
 		});
