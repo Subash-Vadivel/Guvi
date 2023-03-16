@@ -8,7 +8,7 @@ $(document).ready(function() {
         var DOB=$('#DOB').val();
 		var Phone=$('#Phone').val();
 		$.ajax({
-			url: 'http://localhost:3000/php/register.php',
+			url: 'http://localhost:5000/register',
 			type: 'POST',
 			dataType:"json",
 			data:{

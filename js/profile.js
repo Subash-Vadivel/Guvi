@@ -13,13 +13,14 @@ function route()
     {
         const uid=localStorage.getItem('uid');
         $.ajax({
-			url: 'http://localhost:3000/php/profile.php',
+			url: 'http://localhost:5000/profile',
 			type: 'POST',
 			dataType:"json",
 			data:{
 				email:uid
 			},
 			success: function(response) {
+				console.log(response)
                 $('#userName').html(response.name);
                 $('#Name').html(response.name);
                 $('#email').html(response.email);  
@@ -45,7 +46,7 @@ $(document).ready(function() {
 		var Phone=$('#newPhone').val();
         var Email=localStorage.getItem('uid');
 		$.ajax({
-			url: 'http://localhost:3000/php/update.php',
+			url: 'http://localhost:5000/update',
 			type: 'POST',
 			dataType:"json",
 			data:{

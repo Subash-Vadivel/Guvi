@@ -5,7 +5,7 @@ $(document).ready(function() {
 		var Password = $('#lPassword').val();
         var Email=$('#lEmail').val();
 		$.ajax({
-			url: 'http://localhost:3000/php/login.php',
+			url: 'https://guvi03.000webhostapp.com/login.php',
 			type: 'POST',
 			dataType:"json",
 			data:{

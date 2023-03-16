@@ -23,7 +23,7 @@ $redis = new Redis();
 // MongoDB for using Extra details about users
 
 $mongo  = new MongoDB\Client("mongodb+srv://admin:admin@cluster0.oign8db.mongodb.net/?retryWrites=true&w=majority");
-$collection = $mongo->Test->Users;
+$collection = $mongo->Test->users;
 $cursor = $collection->updateOne([
   'email' => $email
 ],

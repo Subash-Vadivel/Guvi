@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // MongoDB for using Extra details about users
 
     $mongo  = new MongoDB\Client("mongodb+srv://admin:admin@cluster0.oign8db.mongodb.net/?retryWrites=true&w=majority");
-    $collection = $mongo->Test->Users;
+    $collection = $mongo->Test->users;
     // $database->echo(['ping' => 1]);
     $cursor = $collection->find([
       'email' => $email
