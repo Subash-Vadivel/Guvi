@@ -8,7 +8,7 @@ $(document).ready(function() {
         var DOB=$('#DOB').val();
 		var Phone=$('#Phone').val();
 		$.ajax({
-			url: 'http://localhost:5000/register',
+			url: 'https://server-93j0.onrender.com/register',
 			type: 'POST',
 			dataType:"json",
 			data:{

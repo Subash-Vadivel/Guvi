@@ -13,7 +13,7 @@ function route()
     {
         const uid=localStorage.getItem('uid');
         $.ajax({
-			url: 'http://localhost:5000/profile',
+			url: 'https://server-93j0.onrender.com/profile',
 			type: 'POST',
 			dataType:"json",
 			data:{
@@ -46,7 +46,7 @@ $(document).ready(function() {
 		var Phone=$('#newPhone').val();
         var Email=localStorage.getItem('uid');
 		$.ajax({
-			url: 'http://localhost:5000/update',
+			url: 'https://server-93j0.onrender.com/update',
 			type: 'POST',
 			dataType:"json",
 			data:{
