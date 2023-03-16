@@ -18,7 +18,6 @@ function route()
 			dataType:"json",
 			data:{
 				Email:uid
-				
 			},
 			success: function(response) {
                 $('#userName').html(response.name);
@@ -35,6 +34,49 @@ function route()
 			}
 
 		});
+        document.getElementById('hideboard').style.display="none";
     }
 }
+$(document).ready(function() {
+	$('#upd').submit(function(e) {
+		e.preventDefault();
+        var Name = $('#newName').val();
+        var DOB=$('#newDOB').val();
+		var Phone=$('#newPhone').val();
+        var Email=localStorage.getItem('uid');
+		$.ajax({
+			url: 'http://localhost:3000/php/update.php',
+			type: 'POST',
+			dataType:"json",
+			data:{
+				Name: Name,
+				Email:Email,
+				DOB:DOB,
+				Phone:Phone
+			},
+			success: function(response) {
+                console.log("Success");
+                location.reload();
+			},
+			error: function(response)
+			{
+				alert("Something went wrong in front end");
+			}
+
+		});
+
+	});
+});
+
+function display()
+{
+    document.getElementById('hideboard').style.display="block";
+}
+function clo()
+{
+    document.getElementById('hideboard').style.display="none";
+}
+
+
+
 
