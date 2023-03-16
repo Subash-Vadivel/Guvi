@@ -17,7 +17,7 @@ function route()
 			type: 'POST',
 			dataType:"json",
 			data:{
-				Email:uid
+				email:uid
 			},
 			success: function(response) {
                 $('#userName').html(response.name);
