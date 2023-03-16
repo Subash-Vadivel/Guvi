@@ -21,14 +21,13 @@ function route()
 				
 			},
 			success: function(response) {
-                console.log(response);
                 $('#userName').html(response.name);
                 $('#Name').html(response.name);
                 $('#email').html(response.email);  
                 $('#phone').html(response.phone);  
                 $('#DOB').html(response.DOB);
                 $('#guviid').html(response.id);
-
+                console.log("From :"+response.from);
 			},
 			error: function(response)
 			{
