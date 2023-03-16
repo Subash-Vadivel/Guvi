@@ -22,7 +22,7 @@ $(document).ready(function() {
                 {
                     const val=response.uid;
 					localStorage.setItem('uid',val);
-					window.location.replace("http://127.0.0.1:5500/profile.html");
+					window.location.replace("https://guvi05.netlify.app/profile.html");
                 }
                 else
                 {
