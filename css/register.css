@@ -1,7 +1,4 @@
-#Help
-{
-    color: red;
-}
+
 .formStyle
 {
 border-radius: 10px;
@@ -13,6 +10,6 @@ background-color: white;
     text-decoration: none;
     color:green;
 }
-.loginbox{
+.registerbox{
     background-color: rgba(94,219,130);
 }
