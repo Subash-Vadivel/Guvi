@@ -1,7 +1,8 @@
 
 .profileBox{
     background-color: rgba(94,219,130);
-    height:100vmax;
+    height:100vmin;
+    height: 200vmax;
 }
 .cons
 {
