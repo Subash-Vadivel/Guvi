@@ -24,7 +24,7 @@ $(document).ready(function() {
 				{
 					const val=response.uid;
 					localStorage.setItem('uid',val);
-					window.location.replace("https://guvi05.netlify.app/profile.html");
+					window.location.replace("https://guvi.rido.live/profile.html");
 				}
 				else
 				{

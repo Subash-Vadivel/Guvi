@@ -5,7 +5,7 @@ $(document).ready(function() {
 		var Password = $('#lPassword').val();
         var Email=$('#lEmail').val();
 		$.ajax({
-			url: 'https://guvi03.000webhostapp.com/login.php',
+			url: 'https://guvi.rido.live/login.php',
 			type: 'POST',
 			dataType:"json",
 			data:{
@@ -22,7 +22,7 @@ $(document).ready(function() {
                 {
                     const val=response.uid;
 					localStorage.setItem('uid',val);
-					window.location.replace("https://guvi05.netlify.app/profile.html");
+					window.location.replace("https://guvi.rido.live/profile.html");
                 }
                 else
                 {

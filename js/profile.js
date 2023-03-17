@@ -1,13 +1,13 @@
 function logout()
 {
     localStorage.removeItem('uid');
-    window.location.replace("https://guvi05.netlify.app");
+    window.location.replace("https://guvi.rido.live");
 }
 function route()
 {
     if(localStorage.getItem('uid')===undefined || localStorage.getItem('uid')==='')
     {
-        window.location.replace("https://guvi05.netlify.app");
+        window.location.replace("https://guvi.rido.live");
     }
     else
     {
