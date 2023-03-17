@@ -20,7 +20,7 @@ $(document).ready(function() {
 			},
 			success: function(response) {
                 console.log(response);
-				if(Object.keys(response.length>1))
+				if(Object.keys(response.length)>1)
 				{
 					const val=response.uid;
 					localStorage.setItem('uid',val);
