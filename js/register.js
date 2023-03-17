@@ -28,7 +28,7 @@ $(document).ready(function() {
 				}
 				else
 				{
-					alert("User Already Exist");
+					$('#Help').html("Email Already Exist");
 				}
                 // alert("success")
 
