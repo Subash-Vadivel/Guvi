@@ -15,15 +15,17 @@
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
 
+    
+   <!-- CSS For Profile Page -->
+   <link rel="stylesheet" href="./css/profile.css">
+
   <title>Profile</title>
 </head>
 
 <body onload="route()">
-  <div class="container">
-
-  </div>
-  <div class="container">
-    <div class="main-body">
+  <div class="container-fluid profileBox ">
+  <div class="container cons">
+    <div class="main-body ">
 
       <!-- Breadcrumb -->
       <nav aria-label="breadcrumb" class="main-breadcrumb">
@@ -35,7 +37,7 @@
 
       </nav>
       <!-- /Breadcrumb -->
-
+       <div class="container-fluid cons">
       <div class="row gutters-sm">
         <div class="col-md-4 mb-3">
           <div class="card">
@@ -102,8 +104,8 @@
               <hr>
               <div class="row">
                 <div class="col-sm-12 text-center">
-                  <button class="btn btn-info " onclick="display()">Update</button>
-                  <button class="btn btn-info " onclick="logout()">Logout</button>
+                  <button class="btn btn-danger " onclick="display()">Update</button>
+                  <button class="btn btn-danger " onclick="logout()">Logout</button>
 
                 </div>
               </div>
@@ -111,12 +113,16 @@
           </div>
         </div>
       </div>
+    </div>
 
     <br>
-      <div class="row" id="hideboard">
+    <div class="container-fluid " id="hideboard">
+      <div class="row" >
         <div class="col-md-3 col-sm-1 col-xs-1 col-lg-3"></div>
-        <div class="col-md-6 col-sm-10 col-xs-1 col-lg-6 ">
-          <button class="btn btn-success" onclick="clo()">Cancel</button>
+        <div class="col-md-6 col-sm-10 col-xs-10 col-lg-6 ">
+          <div class="mb-3">
+          <button class="btn btn-danger" onclick="clo()">Cancel</button>
+          </div>
           <form class="w-100" id="upd">
             <h2>Update</h2>
             <div class="mb-3">
@@ -132,17 +138,17 @@
               <input type="date" class="form-control" id="newDOB" required>
             </div>
             <div class="mb-3 text-center">
-              <button type="submit" class="btn btn-success">Update</button>
+              <button type="submit" class="btn btn-danger">Update</button>
             </div>
           </form>
         </div>
         <div class="col-md-3 col-sm-1 col-xs-1 col-lg-3"></div>
 
       </div>
-
+    </div>
     </div>
   </div>
-
+</div>
 
 </body>
 <!-- Jquery For Ajax -->
