@@ -25,7 +25,7 @@ function route()
                 $('#Name').html(response.name);
                 $('#email').html(response.email);  
                 $('#phone').html(response.phone);  
-                $('#DOB').html(response.DOB);
+                $('#DOB').html(response.DOB.substring(0,10));
                 $('#guviid').html(response.id);
                 console.log("From :"+response.from);
 			},
